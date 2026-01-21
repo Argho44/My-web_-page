@@ -42,6 +42,11 @@ header{
   letter-spacing:1px;
 }
 
+.highlight{
+  color: #6fe6ff; /* light cyan */
+  font-weight: 900;
+}
+
 .menu{
   display:flex;
   gap:12px;
@@ -79,17 +84,18 @@ header{
   position:fixed;
   top:58px;
   right:16px;
-  background:rgba(15,26,51,0.95);
-  border:1px solid rgba(255,255,255,0.2);
+  background:#ffffff; /* SOLID WHITE */
+  border:1px solid rgba(0,0,0,0.2);
   border-radius:12px;
   padding:10px;
   display:none;
 }
+
 .dropdown button{
   width:100%;
   background:transparent;
   border:none;
-  color:var(--text);
+  color:#000; /* black text */
   padding:8px 0;
   cursor:pointer;
   text-align:left;
@@ -119,10 +125,6 @@ header{
 .hero h1{
   font-size:28px;
   margin-bottom:10px;
-}
-.highlight{
-  color: var(--blue);
-  font-weight: 900;
 }
 .hero p{color:var(--muted);line-height:1.4;}
 .hero .buttons{margin-top:14px; display:flex; gap:10px;}
@@ -173,7 +175,7 @@ header{
   background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=60");
 }
 #bike::before{
-  background-image:url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=60"); /* fixed bike photo */
+  background-image:url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=60");
 }
 #village::before{
   background-image:url("https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1000&q=60");
@@ -247,19 +249,21 @@ header{
     <h2>Travel Packages</h2>
     <div class="grid">
       <div class="card" id="swiss">
-        <h3>Switzerland - 4 Days / 3 Nights</h3>
-        <p class="price">Price: ₹1,99,999 (approx)</p>
-        <p>Enjoy mountains, lakes, village life, and beautiful sunsets.</p>
+        <h3>Switzerland 4 Days / 3 Nights</h3>
+        <p>Beautiful snow mountains, lakes, and village life. Includes food + stay.</p>
+        <div class="price">₹ 1,25,000 approx</div>
       </div>
+
       <div class="card" id="bike">
-        <h3>Jagrihi to 22 Bigha & Khariberia (Bike Trip)</h3>
-        <p class="price">Price: ₹2,000 (local trip)</p>
-        <p>Ride by bike, eat Ghugni, enjoy village houses, birds, and sunset.</p>
+        <h3>Jagrihi to 22 Bigha & Khariberia Bike Trip</h3>
+        <p>Bike ride, ghugni, sunset, and village nature exploration.</p>
+        <div class="price">₹ 2,000 approx</div>
       </div>
+
       <div class="card" id="village">
-        <h3>Village Nature Trip - 2 Days</h3>
-        <p class="price">Price: ₹6,999</p>
-        <p>Relax in village atmosphere, nature walks, bird watching.</p>
+        <h3>Village Nature & Sunset Tour</h3>
+        <p>Birds, village houses, calm atmosphere, and peaceful sunset.</p>
+        <div class="price">₹ 4,500 approx</div>
       </div>
     </div>
   </section>
@@ -267,38 +271,35 @@ header{
   <section class="section" id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60" alt="Nature">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60" alt="Switzerland">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=60" alt="Bike Trip">
       <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=60" alt="Village">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=60" alt="Sunset">
-      <img src="https://images.unsplash.com/photo-1526481280695-3c687fd543a0?auto=format&fit=crop&w=800&q=60" alt="Bike Trip">
+      <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?auto=format&fit=crop&w=800&q=60" alt="Sunset">
     </div>
   </section>
 
   <section class="section" id="contact">
     <h2>Contact</h2>
-    <div class="card">
-      <h3>Get in touch</h3>
-      <p>WhatsApp: +91 62892 80882</p>
-      <p>Email: samratargho@gmail.com</p>
-      <p>Location: Jagrihi, 22 Bigha, Khariberia</p>
-    </div>
+    <p>Email: samrat.argho@example.com</p>
+    <p>Phone: 6289280882</p>
   </section>
 
   <div class="footer">
-    © 2026 Samrat & Argho Tours and Travels — All Rights Reserved
+    © 2026 Samrat & Argho Tours and Travels. All rights reserved.
   </div>
 </div>
 
 <script>
-  function scrollToSection(id){
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-  }
+function toggleDropdown(){
+  let d = document.getElementById('dropdown');
+  d.style.display = (d.style.display === 'block') ? 'none' : 'block';
+}
 
-  let dropdownOpen = false;
-  function toggleDropdown(){
-    dropdownOpen = !dropdownOpen;
-    document.getElementById("dropdown").style.display = dropdownOpen ? "block" : "none";
-  }
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.getElementById('dropdown').style.display = 'none';
+}
 </script>
+
 </body>
-</html>
+                                                                       </html>
