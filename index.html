@@ -234,6 +234,7 @@ header{
     <button onclick="scrollToSection('packages')">Packages</button>
     <button onclick="scrollToSection('gallery')">Gallery</button>
     <button onclick="scrollToSection('contact')">Contact</button>
+    <button onclick="openWhatsApp()">WhatsApp</button>
   </div>
 
   <section class="hero">
@@ -306,7 +307,11 @@ function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth'});
   document.getElementById('dropdown').style.display = 'none';
 }
+
+function openWhatsApp(){
+  window.open("https://wa.me/916289280882", "_blank");
+}
 </script>
 
 </body>
-  </html>
+    </html>
