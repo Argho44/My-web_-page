@@ -3,99 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samrat & Argho Tours and Travels</title>
+<title>Samrat & Argho Tours & Travels</title>
 
 <style>
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0a1a2f;
-    color: white;
+    background: #071427;
+    color: #e6f3ff;
   }
 
-  /* 3-dot menu */
+  /* Top bar */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #0c2a4f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #a8e1ff;
+  }
+
   .menu {
-    position: fixed;
-    top: 20px;
-    left: 15px;
-    font-size: 26px;
+    font-size: 28px;
     cursor: pointer;
-    z-index: 1000;
   }
 
   .menu-box {
     display: none;
     position: fixed;
     top: 60px;
-    left: 15px;
-    background: #112b4e;
-    border-radius: 8px;
+    left: 10px;
+    background: #0b2342;
+    border-radius: 10px;
     padding: 10px;
+    width: 200px;
   }
 
   .menu-box a {
     display: block;
-    color: #9fd3ff;
+    color: #c7e9ff;
     text-decoration: none;
-    padding: 8px;
+    padding: 10px;
+    border-bottom: 1px solid #0a2a4a;
   }
 
   .menu-box a:hover {
-    background: #0d2b52;
+    background: #0a2a4a;
   }
 
   /* Header */
   header {
-    background: #0d2b52;
-    padding: 30px;
+    padding: 25px 20px;
     text-align: center;
+    background: linear-gradient(180deg, #0b2a4a, #071427);
   }
 
-  /* Sections */
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #c6eaff;
+  }
+
+  header p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #b8d8ff;
+  }
+
   section {
-    padding: 40px;
-  }
-
-  .card {
-    background: #112b4e;
     padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
   }
 
   h2 {
-    color: #7cc7ff;
+    color: #b8d8ff;
+    margin: 0 0 10px;
+    font-size: 18px;
   }
 
-  footer {
-    background: #081425;
-    text-align: center;
+  /* Card */
+  .card {
+    background: #0b2342;
+    border-radius: 12px;
     padding: 15px;
+    margin: 12px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .card p {
+    margin: 8px 0;
     font-size: 14px;
+    color: #d6e9ff;
   }
 
   /* Gallery */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .gallery img {
     width: 100%;
-    border-radius: 10px;
-    border: 2px solid #0d2b52;
+    border-radius: 12px;
+    border: 2px solid #0a2a4a;
   }
 
   /* Packages table */
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
-  }
-
-  table, th, td {
-    border: 1px solid #0d2b52;
   }
 
   th, td {
@@ -104,12 +128,38 @@
   }
 
   th {
-    background: #0d2b52;
-    color: #9fd3ff;
+    background: #0a2a4a;
+    color: #c7e9ff;
   }
 
   td {
-    background: #112b4e;
+    background: #0b2342;
+    color: #e4f2ff;
+  }
+
+  /* Contact */
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #1c78ff;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  @media (min-width: 600px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>
 
@@ -121,99 +171,82 @@ function toggleMenu() {
 </script>
 
 </head>
-
 <body>
 
-<!-- 3 Dot Menu -->
-<div class="menu" onclick="toggleMenu()">⋮</div>
+<div class="topbar">
+  <div class="logo">Samrat & Argho Tours</div>
+  <div class="menu" onclick="toggleMenu()">⋮</div>
+</div>
+
 <div class="menu-box" id="menuBox">
-  <a href="#packages">Our Packages</a>
+  <a href="#packages">Packages</a>
   <a href="#gallery">Gallery</a>
-  <a href="#about">About Us</a>
+  <a href="#about">About</a>
   <a href="#contact">Contact</a>
 </div>
 
 <header>
-  <h1>Samrat & Argho Tours and Travels</h1>
-  <p>Professional travel services with comfort & reliability</p>
+  <h1>Samrat & Argho Tours & Travels</h1>
+  <p>Modern, professional travel services for real adventures</p>
 </header>
-
-<section id="home">
-  <h2>Welcome</h2>
-  <p>We provide premium domestic and international tour packages with full support and reliable planning.</p>
-</section>
 
 <section id="packages">
   <h2>Tour Packages</h2>
 
-  <table>
-    <tr>
-      <th>Destination</th>
-      <th>Duration</th>
-      <th>Includes</th>
-      <th>Approx Price</th>
-    </tr>
-    <tr>
-      <td>Switzerland</td>
-      <td>4 Days / 3 Nights</td>
-      <td>Zurich, Lucerne, Mount Titlis, Hotels, Transfers</td>
-      <td>₹1,20,000</td>
-    </tr>
-    <tr>
-      <td>Dubai</td>
-      <td>5 Days / 4 Nights</td>
-      <td>Burj Khalifa, Desert Safari, Dhow Cruise</td>
-      <td>₹85,000</td>
-    </tr>
-    <tr>
-      <td>Kerala (India)</td>
-      <td>6 Days / 5 Nights</td>
-      <td>Munnar, Alleppey Houseboat, Cochin</td>
-      <td>₹35,000</td>
-    </tr>
-    <tr>
-      <td>Thailand</td>
-      <td>4 Days / 3 Nights</td>
-      <td>Bangkok, Pattaya, Beach Tour</td>
-      <td>₹55,000</td>
-    </tr>
-  </table>
+  <div class="card">
+    <p><b>Switzerland</b> - 4 Days / 3 Nights</p>
+    <p>Includes: Zurich, Lucerne, Mount Titlis, Hotels, Transfers</p>
+    <p>Price: ₹1,20,000</p>
+  </div>
+
+  <div class="card">
+    <p><b>Dubai</b> - 5 Days / 4 Nights</p>
+    <p>Includes: Burj Khalifa, Desert Safari, Dhow Cruise</p>
+    <p>Price: ₹85,000</p>
+  </div>
+
+  <div class="card">
+    <p><b>Kerala (India)</b> - 6 Days / 5 Nights</p>
+    <p>Includes: Munnar, Alleppey Houseboat, Cochin</p>
+    <p>Price: ₹35,000</p>
+  </div>
+
+  <div class="card">
+    <p><b>Thailand</b> - 4 Days / 3 Nights</p>
+    <p>Includes: Bangkok, Pattaya, Beach Tour</p>
+    <p>Price: ₹55,000</p>
+  </div>
 </section>
 
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" alt="Switzerland">
-    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d4?auto=format&fit=crop&w=900&q=80" alt="Dubai">
-    <img src="https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=900&q=80" alt="Kerala">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Village Nature">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=60" alt="Switzerland">
+    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d4?auto=format&fit=crop&w=600&q=60" alt="Dubai">
+    <img src="https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=600&q=60" alt="Kerala">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=60" alt="Village Nature">
   </div>
 </section>
 
 <section id="about">
-  <h2>About Argho & Samrat</h2>
-  <p>
-    Argho and Samrat are travel enthusiasts who believe the best journeys happen close to home.
-    Travelling by bike from Jagrihi to 22 Bigha and Khariberia, they enjoy village roads, quiet turns,
-    and food breaks — especially ghugni.
-  </p>
-  <p>
-    They love village nature, birds, village houses, peaceful atmosphere,
-    and watching sunsets under open skies.
-  </p>
-  <p>
-    This website is a professional demo project created for learning and presentation purposes.
-  </p>
+  <h2>About Us</h2>
+  <div class="card">
+    <p><b>Samrat & Argho</b> are professional travel planners with 500 years of fictional experience. 😉</p>
+    <p>They travel by bike from Jagrihi to 22 Bigha and Khariberia, enjoy ghugni, village nature, birds, and sunset.</p>
+  </div>
 </section>
 
 <section id="contact">
-  <h2>Contact (Real)</h2>
-  <p>Phone: +91 62892 80882</p>
-  <p>Email: info@samratargotours.com</p>
+  <h2>Contact</h2>
+  <div class="card contact">
+    <p><b>Phone:</b> +91 62892 80882</p>
+    <p><b>Email:</b> info@samratargotours.com</p>
+    <a class="btn" href="https://wa.me/916289280882" target="_blank">Chat on WhatsApp</a>
+  </div>
 </section>
 
-<footer>
-  © 2026 Samrat & Argho Tours and Travels
+<footer style="text-align:center; padding:15px; background:#071427;">
+  © 2026 Samrat & Argho Tours & Travels
 </footer>
 
 </body>
