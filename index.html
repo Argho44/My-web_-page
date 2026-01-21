@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samrat & Argho Tours and Travels</title>
 
 <style>
@@ -16,7 +16,6 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0;font-family: Arial, sans-serif;}
-
 body{
   background: radial-gradient(circle at top, #0b1220 0%, #060b16 70%);
   color:var(--text);
@@ -62,6 +61,42 @@ header{
   background:rgba(47,107,255,0.15);
 }
 
+/* 3 dots menu */
+.dots{
+  position:fixed;
+  top:16px;
+  right:16px;
+  background:rgba(15,26,51,0.9);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:50px;
+  padding:10px 12px;
+  cursor:pointer;
+}
+.dots:hover{background:rgba(15,26,51,1);}
+.dropdown{
+  position:fixed;
+  top:58px;
+  right:16px;
+  background:rgba(15,26,51,0.95);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:12px;
+  padding:10px;
+  display:none;
+}
+.dropdown button{
+  width:100%;
+  background:transparent;
+  border:none;
+  color:var(--text);
+  padding:8px 0;
+  cursor:pointer;
+  text-align:left;
+}
+.dropdown button:hover{
+  color:var(--blue);
+}
+
+/* Hero */
 .hero{
   margin-top:20px;
   background: linear-gradient(145deg, rgba(47,107,255,0.18), rgba(27,76,255,0.12));
@@ -71,7 +106,6 @@ header{
   position:relative;
   overflow:hidden;
 }
-
 .hero::after{
   content:"";
   position:absolute;
@@ -80,14 +114,16 @@ header{
   top:-60px; right:-80px;
   filter:blur(10px);
 }
-
-.hero h1{font-size:28px;margin-bottom:10px;}
-.hero p{color:var(--muted);line-height:1.4;}
-
-.hero .buttons{
-  margin-top:14px;
-  display:flex;gap:10px;
+.hero h1{
+  font-size:28px;
+  margin-bottom:10px;
 }
+.highlight{
+  color: var(--blue);
+  font-weight: 900;
+}
+.hero p{color:var(--muted);line-height:1.4;}
+.hero .buttons{margin-top:14px; display:flex; gap:10px;}
 
 .btn{
   background:var(--blue);
@@ -104,29 +140,48 @@ header{
 .section{margin-top:20px;}
 .section h2{font-size:20px;margin-bottom:10px;}
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-}
+.grid{display:grid; grid-template-columns:1fr; gap:12px;}
 
 .card{
   background:var(--card);
   border:1px solid rgba(255,255,255,0.12);
   border-radius:16px;
   padding:14px;
+  position:relative;
+  overflow:hidden;
   animation:fadeUp 0.6s ease;
 }
 
+.card::before{
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0.35;
+  filter: blur(1px);
+}
+
 .card h3{font-size:16px;margin-bottom:6px;}
-.card p{color:var(--muted);font-size:14px;line-height:1.3;}
+.card p{color:var(--muted);font-size:14px;line-height:1.3; position:relative; z-index:2;}
+.card .price{color:#fff; font-weight:800; position:relative; z-index:2;}
+
+#swiss::before{
+  background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=60");
+}
+#bike::before{
+  background-image:url("https://images.unsplash.com/photo-1526481280695-3c687fd543a0?auto=format&fit=crop&w=1000&q=60");
+}
+#village::before{
+  background-image:url("https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1000&q=60");
+}
 
 .gallery{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
 }
-
 .gallery img{
   width:100%;
   border-radius:14px;
@@ -172,14 +227,23 @@ header{
 
 <body>
 <div class="container">
+
   <header>
-    <div class="logo">Samrat & Argho Tours and Travels</div>
+    <div class="logo"><span class="highlight">Samrat & Argho</span> Tours and Travels</div>
     <div class="menu">
       <button onclick="scrollToSection('packages')">Packages</button>
       <button onclick="scrollToSection('gallery')">Gallery</button>
       <button onclick="scrollToSection('contact')">Contact</button>
     </div>
   </header>
+
+  <!-- 3 dots menu -->
+  <div class="dots" onclick="toggleDropdown()">⋮</div>
+  <div class="dropdown" id="dropdown">
+    <button onclick="scrollToSection('packages')">Packages</button>
+    <button onclick="scrollToSection('gallery')">Gallery</button>
+    <button onclick="scrollToSection('contact')">Contact</button>
+  </div>
 
   <section class="hero">
     <h1>Explore Nature, Village Life & Adventure</h1>
@@ -196,19 +260,19 @@ header{
   <section class="section" id="packages">
     <h2>Travel Packages</h2>
     <div class="grid">
-      <div class="card">
+      <div class="card" id="swiss">
         <h3>Switzerland - 4 Days / 3 Nights</h3>
-        <p>Price: ₹1,99,999 (approx)</p>
+        <p class="price">Price: ₹1,99,999 (approx)</p>
         <p>Enjoy mountains, lakes, village life, and beautiful sunsets.</p>
       </div>
-      <div class="card">
+      <div class="card" id="bike">
         <h3>Jagrihi to 22 Bigha & Khariberia (Bike Trip)</h3>
-        <p>Price: ₹2,000 (local trip)</p>
+        <p class="price">Price: ₹2,000 (local trip)</p>
         <p>Ride by bike, eat Ghugni, enjoy village houses, birds, and sunset.</p>
       </div>
-      <div class="card">
+      <div class="card" id="village">
         <h3>Village Nature Trip - 2 Days</h3>
-        <p>Price: ₹6,999</p>
+        <p class="price">Price: ₹6,999</p>
         <p>Relax in village atmosphere, nature walks, bird watching.</p>
       </div>
     </div>
@@ -253,6 +317,12 @@ header{
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
 
+  let dropdownOpen = false;
+  function toggleDropdown(){
+    dropdownOpen = !dropdownOpen;
+    document.getElementById("dropdown").style.display = dropdownOpen ? "block" : "none";
+  }
+
   let music = document.getElementById("bgMusic");
   let musicText = document.getElementById("musicText");
 
@@ -266,6 +336,5 @@ header{
     }
   }
 </script>
-
 </body>
 </html>
