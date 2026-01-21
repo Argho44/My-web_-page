@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samrat & Argho Tours and Travels</title>
+
 <style>
 body {
     margin: 0;
@@ -11,29 +12,60 @@ body {
     background: #0a1a2f;
     color: white;
 }
+
+/* 3-dot menu */
+.menu {
+    position: fixed;
+    top: 20px;
+    left: 15px;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-box {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 15px;
+    background: #112b4e;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.menu-box a {
+    display: block;
+    color: #9fd3ff;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.menu-box a:hover {
+    background: #0d2b52;
+}
+
+/* Main */
 header {
     background: #0d2b52;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
 }
-nav a {
-    color: #9fd3ff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
+
 section {
     padding: 40px;
 }
+
 .card {
     background: #112b4e;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
 }
+
 h2 {
     color: #7cc7ff;
 }
+
 footer {
     background: #081425;
     text-align: center;
@@ -41,62 +73,73 @@ footer {
     font-size: 14px;
 }
 </style>
+
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("menuBox");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
 </head>
 
 <body>
 
+<!-- 3 Dot Menu -->
+<div class="menu" onclick="toggleMenu()">⋮</div>
+<div class="menu-box" id="menuBox">
+    <a href="#packages">Our Packages</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+</div>
+
 <header>
     <h1>Samrat & Argho Tours and Travels</h1>
-    <p>Your journey begins with us</p>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#packages">Packages</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <p>Demo travel website — local vibes, global dreams</p>
 </header>
 
-<section id="home">
+<section>
     <h2>Welcome</h2>
-    <p>We provide premium international and domestic tour packages with comfort, safety, and unforgettable experiences.</p>
+    <p>This is a demo tours and travels website created as an example of modern web design.</p>
 </section>
 
 <section id="packages">
-    <h2>Tour Packages</h2>
+    <h2>Tour Packages (Sample)</h2>
 
     <div class="card">
-        <h3>🇨🇭 Switzerland – 4 Days / 3 Nights</h3>
-        <p>Includes Zurich, Lucerne, Mount Titlis, hotels, sightseeing & transfers.</p>
-        <p><strong>Starting from ₹1,20,000</strong></p>
+        <h3>Switzerland – 4 Days / 3 Nights</h3>
+        <p>Zurich, Lucerne, Mount Titlis (Demo Package)</p>
     </div>
 
     <div class="card">
-        <h3>🇦🇪 Dubai – 5 Days / 4 Nights</h3>
-        <p>Burj Khalifa, Desert Safari, Dhow Cruise, luxury stay.</p>
-        <p><strong>Starting from ₹85,000</strong></p>
-    </div>
-
-    <div class="card">
-        <h3>🇮🇳 Kerala – 6 Days / 5 Nights</h3>
-        <p>Munnar, Alleppey Houseboat, Cochin city tour.</p>
-        <p><strong>Starting from ₹35,000</strong></p>
+        <h3>Dubai – 5 Days / 4 Nights</h3>
+        <p>Desert Safari, Burj Khalifa (Demo Package)</p>
     </div>
 </section>
 
 <section id="about">
-    <h2>About Us</h2>
-    <p>Samrat & Argho Tours and Travels is committed to delivering memorable travel experiences with reliable service and expert planning.</p>
+    <h2>About Argho & Samrat</h2>
+    <p>
+        Argho and Samrat are legendary local explorers who believe the best journeys happen close to home.
+        Travelling by bike from Jagrihi to 22 Bigha and Khariberia, they enjoy village roads, quiet turns,
+        and food breaks — especially ghugni.
+    </p>
+    <p>
+        They love village nature, birds, village houses, peaceful atmosphere,
+        and watching sunsets under open skies.
+    </p>
+    <p>
+        This website is a fun demo project created for learning and presentation purposes only.
+    </p>
 </section>
 
 <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: +91-XXXXXXXXXX</p>
-    <p>📧 Email: info@samratandargotours.com</p>
-    <p>📍 Location: India</p>
+    <h2>Contact (Demo)</h2>
+    <p>Phone: +91-XXXXXXXXXX</p>
+    <p>Email: demo@example.com</p>
 </section>
 
 <footer>
-    © 2026 Samrat & Argho Tours and Travels. All rights reserved.
+    © Demo Website — Samrat & Argho Tours and Travels
 </footer>
 
 </body>
