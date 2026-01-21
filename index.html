@@ -66,13 +66,15 @@ header{
   position:fixed;
   top:16px;
   right:16px;
-  background:rgba(15,26,51,0.9);
-  border:1px solid rgba(255,255,255,0.2);
+  background:#ffffff; /* SOLID WHITE */
+  color:#000;
+  border:1px solid rgba(0,0,0,0.2);
   border-radius:50px;
   padding:10px 12px;
   cursor:pointer;
 }
-.dots:hover{background:rgba(15,26,51,1);}
+.dots:hover{background:#ffffff;}
+
 .dropdown{
   position:fixed;
   top:58px;
@@ -171,7 +173,7 @@ header{
   background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=60");
 }
 #bike::before{
-  background-image:url("https://images.unsplash.com/photo-1526481280695-3c687fd543a0?auto=format&fit=crop&w=1000&q=60");
+  background-image:url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=60"); /* fixed bike photo */
 }
 #village::before{
   background-image:url("https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1000&q=60");
@@ -194,22 +196,6 @@ header{
   color:var(--muted);
   font-size:13px;
 }
-
-/* Music button */
-.music{
-  position:fixed;
-  bottom:16px;
-  right:16px;
-  background:rgba(15,26,51,0.9);
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:50px;
-  padding:10px 14px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.music span{font-size:13px;color:var(--text);}
 
 /* Animations */
 @keyframes fadeUp{
@@ -303,15 +289,6 @@ header{
   </div>
 </div>
 
-<!-- Music Player -->
-<button class="music" onclick="toggleMusic()">
-  <span id="musicText">Play Music</span>
-</button>
-
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/02/08/audio_eb5f24b7b2.mp3?filename=peaceful-travel-ambience-105276.mp3" type="audio/mpeg">
-</audio>
-
 <script>
   function scrollToSection(id){
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
@@ -321,19 +298,6 @@ header{
   function toggleDropdown(){
     dropdownOpen = !dropdownOpen;
     document.getElementById("dropdown").style.display = dropdownOpen ? "block" : "none";
-  }
-
-  let music = document.getElementById("bgMusic");
-  let musicText = document.getElementById("musicText");
-
-  function toggleMusic(){
-    if(music.paused){
-      music.play();
-      musicText.innerText = "Pause Music";
-    } else {
-      music.pause();
-      musicText.innerText = "Play Music";
-    }
   }
 </script>
 </body>
