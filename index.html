@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samrat & Argho Tours and Travels</title>
+<title>Abhronil & Argho Tours and Travels</title>
+
+<meta name="description" content="Abhronil & Argho Tours and Travels – Professional travel services, bike trips, nature tours and international packages.">
+<meta name="keywords" content="Tours and Travels, Nature Tour, Bike Trip, Travel Packages, Switzerland Tour">
 
 <style>
 :root{
@@ -43,145 +46,61 @@ header{
 }
 
 .highlight{
-  color: #6fe6ff; /* light cyan */
-  font-weight: 900;
+  color:#6fe6ff;
+  font-weight:900;
 }
 
-.menu{
-  display:flex;
-  gap:12px;
-}
-
-.menu button{
-  background:transparent;
-  border:1px solid rgba(255,255,255,0.15);
-  color:var(--text);
-  padding:8px 12px;
-  border-radius:10px;
-  cursor:pointer;
-  transition:0.2s;
-}
-.menu button:hover{
-  border-color:var(--blue);
-  background:rgba(47,107,255,0.15);
-}
-
-/* 3 dots menu */
+/* 3 dots */
 .dots{
   position:fixed;
   top:16px;
   right:16px;
-  background-color:#ffffff !important; /* SOLID WHITE */
+  background:#ffffff !important;
   color:#000;
-  border:1px solid #000000;
+  border:1px solid #000;
   border-radius:50px;
   padding:10px 12px;
   cursor:pointer;
   z-index:9999;
 }
-.dots:hover{background:#ffffff;}
 
 .dropdown{
   position:fixed;
   top:58px;
   right:16px;
-  background-color:#ffffff !important; /* SOLID WHITE */
-  opacity:1 !important;                /* NO transparency */
-  border:1px solid #000000;
+  background:#ffffff !important;
+  opacity:1 !important;
+  border:1px solid #000;
   border-radius:12px;
   padding:10px;
   display:none;
   z-index:9999;
 }
-
 .dropdown button{
   width:100%;
-  background:transparent;
+  background:none;
   border:none;
-  color:#000; /* black text */
+  color:#000;
   padding:8px 0;
-  cursor:pointer;
   text-align:left;
-}
-.dropdown button:hover{
-  color:var(--blue);
+  cursor:pointer;
 }
 
-/* Hero */
 .hero{
   margin-top:20px;
-  background: linear-gradient(145deg, rgba(47,107,255,0.18), rgba(27,76,255,0.12));
-  border:1px solid rgba(255,255,255,0.15);
+  background:linear-gradient(145deg, rgba(47,107,255,.18), rgba(27,76,255,.12));
   border-radius:20px;
   padding:20px;
-  position:relative;
-  overflow:hidden;
 }
-.hero::after{
-  content:"";
-  position:absolute;
-  width:300px;height:300px;
-  background: radial-gradient(circle, rgba(47,107,255,0.35), transparent 70%);
-  top:-60px; right:-80px;
-  filter:blur(10px);
-}
-.hero h1{
-  font-size:28px;
-  margin-bottom:10px;
-}
-.hero p{color:var(--muted);line-height:1.4;}
-.hero .buttons{margin-top:14px; display:flex; gap:10px;}
-
-.btn{
-  background:var(--blue);
-  color:#fff;
-  border:none;
-  padding:10px 16px;
-  border-radius:12px;
-  cursor:pointer;
-  font-weight:600;
-  transition:0.2s;
-}
-.btn:hover{background:var(--blue2);}
 
 .section{margin-top:20px;}
-.section h2{font-size:20px;margin-bottom:10px;}
-
-.grid{display:grid; grid-template-columns:1fr; gap:12px;}
+.section h2{margin-bottom:10px;}
 
 .card{
   background:var(--card);
-  border:1px solid rgba(255,255,255,0.12);
   border-radius:16px;
   padding:14px;
-  position:relative;
-  overflow:hidden;
-  animation:fadeUp 0.6s ease;
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background-size:cover;
-  background-position:center;
-  opacity:0.35;
-  filter: blur(1px);
-}
-
-.card h3{font-size:16px;margin-bottom:6px;}
-.card p{color:var(--muted);font-size:14px;line-height:1.3; position:relative; z-index:2;}
-.card .price{color:#fff; font-weight:800; position:relative; z-index:2;}
-
-#swiss::before{
-  background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=60");
-}
-#bike::before{
-  background-image:url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=60");
-}
-#village::before{
-  background-image:url("https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1000&q=60");
+  margin-bottom:12px;
 }
 
 .gallery{
@@ -192,7 +111,6 @@ header{
 .gallery img{
   width:100%;
   border-radius:14px;
-  border:1px solid rgba(255,255,255,0.12);
 }
 
 .footer{
@@ -201,117 +119,91 @@ header{
   color:var(--muted);
   font-size:13px;
 }
-
-/* Animations */
-@keyframes fadeUp{
-  from {opacity:0; transform:translateY(10px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
-/* Mobile */
-@media (max-width:600px){
-  .gallery{grid-template-columns:1fr;}
-  .menu{display:none;}
-}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-  <header>
-    <div class="logo"><span class="highlight">Samrat & Argho</span> Tours and Travels</div>
-    <div class="menu">
-      <button onclick="scrollToSection('packages')">Packages</button>
-      <button onclick="scrollToSection('gallery')">Gallery</button>
-      <button onclick="scrollToSection('contact')">Contact</button>
-    </div>
-  </header>
+<header>
+  <div class="logo">
+    <span class="highlight">Abhronil & Argho</span> Tours and Travels
+  </div>
+</header>
 
-  <!-- 3 dots menu -->
-  <div class="dots" onclick="toggleDropdown()">⋮</div>
-  <div class="dropdown" id="dropdown">
-    <button onclick="scrollToSection('packages')">Packages</button>
-    <button onclick="scrollToSection('gallery')">Gallery</button>
-    <button onclick="scrollToSection('contact')">Contact</button>
-    <button onclick="openWhatsApp()">WhatsApp</button>
+<div class="dots" onclick="toggleDropdown()">⋮</div>
+<div class="dropdown" id="dropdown">
+  <button onclick="scrollToSection('packages')">Packages</button>
+  <button onclick="scrollToSection('gallery')">Gallery</button>
+  <button onclick="openWhatsApp()">WhatsApp</button>
+</div>
+
+<section class="hero">
+  <h1>Explore Nature & Adventure</h1>
+  <p>
+    Welcome to <b>Abhronil & Argho Tours and Travels</b>.  
+    We provide peaceful nature tours, scenic bike journeys, sunset viewpoints,
+    countryside travel and international holiday packages.
+  </p>
+</section>
+
+<section class="section" id="packages">
+  <h2>Travel Packages</h2>
+
+  <div class="card">
+    <h3>Switzerland – 4 Days / 3 Nights</h3>
+    <p>Snow mountains, lakes, beautiful towns and guided sightseeing.</p>
+    <b>₹1,25,000 approx</b>
   </div>
 
-  <section class="hero">
-    <h1>Explore Nature, Village Life & Adventure</h1>
-    <p>
-      Welcome to <b>Samrat & Argho Tours and Travels</b>. We are a 500-year-old company
-      known for peaceful village journeys, bike trips, sunset views, birds, and nature.
-    </p>
-    <div class="buttons">
-      <button class="btn" onclick="scrollToSection('packages')">View Packages</button>
-      <button class="btn" onclick="scrollToSection('contact')">Contact Us</button>
-    </div>
-  </section>
-
-  <section class="section" id="packages">
-    <h2>Travel Packages</h2>
-    <div class="grid">
-      <div class="card" id="swiss">
-        <h3>Switzerland 4 Days / 3 Nights</h3>
-        <p>Beautiful snow mountains, lakes, and village life. Includes food + stay.</p>
-        <div class="price">₹ 1,25,000 approx</div>
-      </div>
-
-      <div class="card" id="bike">
-        <h3>Jagrihi to 22 Bigha & Khariberia Bike Trip</h3>
-        <p>Bike ride, ghugni, sunset, and village nature exploration.</p>
-        <div class="price">₹ 2,000 approx</div>
-      </div>
-
-      <div class="card" id="village">
-        <h3>Village Nature & Sunset Tour</h3>
-        <p>Birds, village houses, calm atmosphere, and peaceful sunset.</p>
-        <div class="price">₹ 4,500 approx</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60" alt="Switzerland">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=60" alt="Bike Trip">
-      <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=60" alt="Village">
-      <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?auto=format&fit=crop&w=800&q=60" alt="Sunset">
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <div style="background:#0f1a33; border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:14px;">
-      <p style="color:#e9f0ff; font-weight:700;">Contact Us</p>
-      <p style="color:#a3b1c7; margin-top:6px;">Email: <span style="color:#e9f0ff;">samrat.argho@example.com</span></p>
-      <p style="color:#a3b1c7; margin-top:6px;">Phone: <span style="color:#e9f0ff;">6289280882</span></p>
-      <p style="color:#a3b1c7; margin-top:6px;">Location: Jagrihi, 22 Bigha, Khariberia</p>
-    </div>
-  </section>
-
-  <div class="footer">
-    © 2026 Samrat & Argho Tours and Travels. All rights reserved.
+  <div class="card">
+    <h3>Scenic Bike Tour</h3>
+    <p>Calm roads, open landscapes, sunset views and photography stops.</p>
+    <b>₹2,000 approx</b>
   </div>
+
+  <div class="card">
+    <h3>Nature & Village Experience</h3>
+    <p>Bird sounds, green fields, peaceful environment and slow travel.</p>
+    <b>₹4,500 approx</b>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+    <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef">
+    <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791">
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <p>📞 6289280882</p>
+  <p>📧 abhronil.argho@example.com</p>
+</section>
+
+<div class="footer">
+© 2026 Abhronil & Argho Tours and Travels
+</div>
+
 </div>
 
 <script>
 function toggleDropdown(){
-  let d = document.getElementById('dropdown');
-  d.style.display = (d.style.display === 'block') ? 'none' : 'block';
+  let d=document.getElementById("dropdown");
+  d.style.display=d.style.display==="block"?"none":"block";
 }
-
 function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
-  document.getElementById('dropdown').style.display = 'none';
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+  document.getElementById("dropdown").style.display="none";
 }
-
 function openWhatsApp(){
-  window.open("https://wa.me/916289280882", "_blank");
+  window.open("https://wa.me/916289280882","_blank");
 }
 </script>
 
 </body>
-    </html>
+</html>
